@@ -6,29 +6,56 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">      
         <meta http-equiv="x-ua-compatible" content="ie=edge">    
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 
         <style type="text/css">
-           
+           #grey {
+               position: absolute;
+               width: 100vw;
+               height: 100vh;
+               top: 0;
+               left: 0;
+               background-color: rgb(236, 236, 236);
+               clip-path: polygon(100% 0%, 100% 90%, 0% 100%, 0% 10%);
+               z-index: -1;
+           }
            #form {
                 width: 50vw;
-                margin: 100px auto 0 auto;
+                margin: 20vh auto 0 auto;
                 border-radius: 10px;
+                font-family: 'Roboto Condensed', sans-serif;
             }
             @media screen and (max-width: 800px){
                 #form {
                     width: 75vw;
-                    margin: auto;
+                    margin: 15vh auto 0 auto;
                 }
-            }
-            @media screen and (max-width: 800px){
                 h1{
                     font-size: 150%;
                     padding-top: 10px;
                 }
             }
+            @media screen and (max-height: 710px) {
+                h1 {
+                    font-size: 200%;
+                    padding-top: 10px;
+                }
+                #form {
+                    margin: 10vh auto 0 auto;
+                }
+            }
+            @media screen and (max-height: 580px) {
+                #grey {
+                    display: none;
+                }
+                #form {
+                    margin: 2vh auto 0 auto;
+                }
+            }
         </style>
     </head>
     <body>
+        <div id="grey"></div>
         <div id="form">
             <h1>Please fill out our contact form:</h1>
             <small id="requiredFields" class="form-text text-muted">All fields are required</small><br>
@@ -49,7 +76,6 @@
                 </div>
             </form>
         </div>
-        <div id="footer"></div>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
