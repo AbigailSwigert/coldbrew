@@ -34,10 +34,64 @@
                 background-color: white;
                 width: 100px;
             }
-            @media screen and (max-width: 640px) {
-                hr {
-                    width: 90px;
+            .productImg {
+                height: 80vh;
+                width: auto;
+            }
+            
+            .animate {
+                -webkit-animation-duration: 1500ms;
+                animation-duration: 1500ms;
+                -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+            }
+            @-webkit-keyframes fadeInRight {
+                0% {
+                    opacity: 0;
+                    -webkit-transform: translateX(-100%);
+                    transform: translateX(-100%);
+                    margin: 50px 0 0 0;
                 }
+                30% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                    -webkit-transform: none;
+                    transform: none;
+                    margin: 50px 0 0 80px;
+                }
+            }
+            @keyframes fadeInRight {
+                0% {
+                    opacity: 0;
+                    -webkit-transform: translateX(-100%);
+                    transform: translateX(-100%);
+                    margin: 50px 0 0 0;
+                }
+                30% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                    -webkit-transform: none;
+                    transform: none;
+                    margin: 50px 0 0 80px;
+                }
+            }
+            .fadeInRight {
+                -webkit-animation-name: fadeInRight;
+                animation-name: fadeInRight;
+            }
+            .rightInfo {
+                float: right;
+                width: 50vw;
+                height: 70vh;
+                margin-top: 80px;
+                margin-right: 8vw;
+                background-color: #6a8a9b;
+                border-radius: 20px;
+                box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
             }
         </style>
     </head>
@@ -64,7 +118,14 @@
             </div>
         </div>
         
-        
+        <div id="flexContainer">
+            <div style="width: 40vw; position: absolute;">
+                <img class="productImg animate fadeInRight" src="coldbrew-comp.jpg">
+            </div>
+            <div class="rightInfo">
+                <p style="display: none;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc condimentum lacus augue, eu varius nulla condimentum vitae. Sed sodales odio molestie, bibendum sem semper, euismod nisl. Fusce eu tempus velit. Etiam tincidunt arcu urna, in vulputate justo pharetra sed. Donec lorem purus, scelerisque eget viverra nec, iaculis ut nisl. Vivamus mauris orci, porta iaculis molestie sed, molestie at lacus. In vulputate ipsum tellus, ac viverra neque congue pulvinar. In in augue rhoncus, volutpat risus vitae, accumsan arcu. Sed viverra felis vitae tortor faucibus feugiat. Quisque ac pellentesque odio. Nulla et imperdiet magna.</p>
+            </div>
+        </div>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
