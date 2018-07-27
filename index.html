@@ -1,204 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Cold Brew</title> <!--change title for each website-->
-        <meta charset="utf-8">        
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">      
-        <meta http-equiv="x-ua-compatible" content="ie=edge">    
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet"> 
 
-        <style type="text/css">
-            #topBar {
-                position: absolute;
-                height: 80px;
-                width: 100vw;
-                z-index: -1;
-                background-color: #3f3531;
+<head>
+    <title>Cold Brew</title>
+    <!--change title for each website-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+
+    <style type="text/css">
+        body {
+            overflow-x: hidden;
+        }
+        #topBar {
+            position: absolute;
+            height: 80px;
+            width: 100vw;
+            z-index: -1;
+            background-color: #3f3531;
+        }
+        #sideNav {
+            position: sticky;
+            left: 2000px;
+            height: 80px;
+            width: 150px;
+            text-align: center;
+            padding: 20px 0 0 0;
+            background-color: #3f3531;
+        }
+        .navbar-dark .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+        #sideNavInfo {
+            background-color: #3f3531;
+        }
+        hr {
+            background-color: white;
+            width: 100px;
+        }
+        .productImg {
+            height: 80vh;
+            width: auto;
+        }
+        .animate {
+            -webkit-animation-duration: 1500ms;
+            animation-duration: 1500ms;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+        }
+        @-webkit-keyframes fadeInRight {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateX(-100%);
+                transform: translateX(-100%);
+                margin: 50px 0 0 0;
             }
-            #sideNav {
-                position: sticky;
-                left: 2000px;
-                height: 80px;
-                width: 150px;
-                text-align: center;
-                padding: 20px 0 0 0;
-                background-color: #3f3531;
+            30% {
+                opacity: 0;
             }
-            .navbar-dark .navbar-toggler-icon {
-                background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+            100% {
+                opacity: 1;
+                -webkit-transform: none;
+                transform: none;
+                margin: 50px 0 0 0;
             }
-            #sideNavInfo {
-                background-color: #3f3531;
+        }
+        @keyframes fadeInRight {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateX(-100%);
+                transform: translateX(-100%);
+                margin: 50px 0 0 0;
             }
-            hr {
-                background-color: white;
-                width: 100px;
+            30% {
+                opacity: 0;
             }
-            .productImg {
-                height: 80vh;
-                width: auto;
+            100% {
+                opacity: 1;
+                -webkit-transform: none;
+                transform: none;
+                margin: 50px 0 0 0;
             }
-            
-            .animate {
-                -webkit-animation-duration: 1500ms;
-                animation-duration: 1500ms;
-                -webkit-animation-fill-mode: both;
-                animation-fill-mode: both;
+        }
+        .fadeInRight {
+            -webkit-animation-name: fadeInRight;
+            animation-name: fadeInRight;
+        }
+        .rightInfoContainer {
+            z-index: 0;
+            float: right;
+            width: 50vw;
+            height: 70vh;
+            margin-top: 80px;
+            text-align: center;
+            padding: 15vh 40px 0 40px;
+        }
+        .rightInfo {
+            z-index: inherit;
+            font-family: 'Roboto Condensed', sans-serif;
+            line-height: 30px;
+        }
+        @-webkit-keyframes fadeInLeft {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateX(200%);
+                transform: translateX(200%);
+                margin: 50px 0 0 0;
             }
-            @-webkit-keyframes fadeInRight {
-                0% {
-                    opacity: 0;
-                    -webkit-transform: translateX(-100%);
-                    transform: translateX(-100%);
-                    margin: 50px 0 0 0;
-                }
-                30% {
-                    opacity: 0;
-                }
-                100% {
-                    opacity: 1;
-                    -webkit-transform: none;
-                    transform: none;
-                    margin: 50px 0 0 0;
-                }
+            30% {
+                opacity: 0;
             }
-            @keyframes fadeInRight {
-                0% {
-                    opacity: 0;
-                    -webkit-transform: translateX(-100%);
-                    transform: translateX(-100%);
-                    margin: 50px 0 0 0;
-                }
-                30% {
-                    opacity: 0;
-                }
-                100% {
-                    opacity: 1;
-                    -webkit-transform: none;
-                    transform: none;
-                    margin: 50px 0 0 0;
-                }
+            100% {
+                opacity: 1;
+                -webkit-transform: none;
+                transform: none;
+                margin: 50px 0 0 0;
             }
-            .fadeInRight {
-                -webkit-animation-name: fadeInRight;
-                animation-name: fadeInRight;
+        }
+        @keyframes fadeInLeft {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateX(200%);
+                transform: translateX(200%);
+                margin: 80px 0 0 0;
             }
-            @-webkit-keyframes fadeInLeft {
-                0% {
-                    opacity: 0;
-                    -webkit-transform: translateX(200%);
-                    transform: translateX(200%);
-                    margin: 50px 0 0 0;
-                }
-                30% {
-                    opacity: 0;
-                }
-                100% {
-                    opacity: 1;
-                    -webkit-transform: none;
-                    transform: none;
-                    margin: 50px 0 0 0;
-                }
+            30% {
+                opacity: 0;
             }
-            @keyframes fadeInLeft {
-                0% {
-                    opacity: 0;
-                    -webkit-transform: translateX(200%);
-                    transform: translateX(200%);
-                    margin: 50px 0 0 0;
-                }
-                30% {
-                    opacity: 0;
-                }
-                100% {
-                    opacity: 1;
-                    -webkit-transform: none;
-                    transform: none;
-                    margin: 50px 0 0 0;
-                }
+            100% {
+                opacity: 1;
+                -webkit-transform: none;
+                transform: none;
+                margin: 80px 0 0 0;
             }
-            .grey-background {
-                position: absolute;
-                z-index: -1;
-                background-color: rgb(236, 236, 236);
-                width: 100vw;
-                height: 100vh;
-                clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%)
-            }
-            .fadeInLeft {
-                -webkit-animation-name: fadeInLeft;
-                animation-name: fadeInLeft;
-                z-index: 0;
-            }
-            #flexContainer {
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: space-evenly;
-            }
-            .rightInfoContainer {
-                z-index: 0;
-                float: right;
-                width: 50vw;
-                height: 70vh;
-                margin-top: 80px;
-                text-align: center;
-                padding: 15vh 40px 0 40px;
-            }
-            .rightInfo {
-                z-index: inherit;
-                font-family: 'Roboto Condensed', sans-serif;
-                line-height: 30px;
-            }
-            #info {
-                height: 20vh;
-                width: 40vw;
-            }
-        </style>
-    </head>
-    <body>
-        <div id="topBar"></div>
-        <div id="sideNav">
-            <nav class="navbar-dark" style="background-color: #3f3531;">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sideNavInfo" aria-controls="sideNavInfo" aria-expanded="false" aria-label="Toggle navigation">
+        }
+        .fadeInLeft {
+            -webkit-animation-name: fadeInLeft;
+            animation-name: fadeInLeft;
+            z-index: 0;
+        }
+        .grey-background {
+            position: absolute;
+            z-index: -1;
+            background-color: rgb(236, 236, 236);
+            width: 100vw;
+            height: 100vh;
+        }
+        #flexContainer {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            overflow: hidden;
+        }
+        #benefits {
+            width: 30vw;
+            margin-top: 80px;
+            text-align: center;
+        }
+        .icon {
+            height: 100px;
+            width: 100px;
+        }
+        #flex-footer {
+            z-index: 0;
+            width: 100vw;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin-top: 250px;
+        }
+        #flex-footer .productImg {
+            height: 70vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="topBar"></div>
+    <div id="sideNav">
+        <nav class="navbar-dark" style="background-color: #3f3531;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sideNavInfo" aria-controls="sideNavInfo"
+                aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-                </button>
-            </nav>
-            <div class="collapse" id="sideNavInfo">
-                <div class="p-4">
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="index.html"><h4>Home</h4></a> <!--make it a logo by adding img in link-->
-                            <hr>
-                        </li>
-                        <li class="nav-item"></li>
-                            <a class="nav-link text-white" href="contact.html">Contact</a>
-                        </li>
-                    </ul>
-                </div>
+            </button>
+        </nav>
+        <div class="collapse" id="sideNavInfo">
+            <div class="p-4">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="index.html">
+                            <h4>Home</h4>
+                        </a>
+                        <!--make it a logo by adding img in link-->
+                        <hr>
+                    </li>
+                    <li class="nav-item"></li>
+                    <a class="nav-link text-white" href="contact.html">Contact</a>
+                    </li>
+                </ul>
             </div>
         </div>
-        
-        <div class="grey-background"></div>
-        <div id="flexContainer">
-            <div>
-                <img class="productImg animate fadeInRight" src="coldbrew-comp.jpg">
-            </div>
-            <div class="rightInfoContainer">
-                <h5 class="rightInfo">Cold brewing, also called cold water extraction or cold pressing, is the process of steeping coffee grounds in water at cool temperatures for an extended period. Coarse-ground beans are soaked in water for a prolonged period of time, usually 12 hours or more. The water is normally kept at room temperature, but chilled water is also used. The grounds are filtered out of the water after they have been steeped using a paper coffee filter, a fine metal sieve, a French press, or felt, in the case of the "Toddy" brewing system. The result is a coffee concentrate that is often diluted with water or milk, and is served hot, over ice, or blended with ice and other ingredients such as chocolate. Slow-drip cold brew, also known as Kyoto-style, or as Dutch coffee in East Asia, refers to a process in which water is dripped through coffee grounds at room temperature over the course of many hours.</h5>
-            </div>
-            <div id="info">
+    </div>
 
-            </div>
-            <div>
-                <img class="productImg animate fadeInLeft" src="filter-comp.jpg">
-            </div>
+    <div class="grey-background" style="clip-path: polygon(0 0, 100% 0, 100% 75%, 0 95%);"></div>
+    <div id="flexContainer">
+        <div>
+            <img class="productImg animate fadeInRight" src="coldbrew-comp.jpg">
         </div>
+        <div class="rightInfoContainer">
+            <h5 class="rightInfo">Cold brewing, also called cold water extraction or cold pressing, is the process of steeping coffee grounds in water at cool temperatures for an extended period. Coarse-ground beans are soaked in water for a prolonged period of time, usually 12 hours or more. The water is normally kept at room temperature but chilled water is also used. The grounds are filtered out of the water after they have been steeped using a paper coffee filter, a fine metal sieve, a French press, or felt, in the case of the "Toddy" brewing system. The result is a coffee concentrate that is often diluted with water or milk, and is served hot, over ice, or blended with ice and other ingredients such as chocolate. Slow-drip cold brew, also known as Kyoto-style, or as Dutch coffee in East Asia, refers to a process in which water is dripped through coffee grounds at room temperature over the course of many hours.</h5>
+        </div>
+        <div id="benefits">
+            <img class="icon" src="health-icon.svg"><br>
+            <h5><b>Increased Amounts of Antioxidants (Chlorogenic Acid)</b></h5>
+            <p>Chlorogenic acid is a powerful antioxidant which is found in coffee beans, but it is extremely sensitive to heat. Chlorogenic acid itself is a reason for you to drink coffee every day, but roasting the coffee beans is detrimental to the health of this amazing antioxidant.</p><br>
+            <img class="icon" src="acid-icon.svg"><br>
+            <h5><b>Less Acid in Coffee Overall</b></h5>
+            <p>Cold brew health benefits include the fact that cold brew may have up to 67% less acid overall than traditional brewing methods. A common misconception is that the total acid content will affect the GERD problems for those sensitive. However, coffee acidity is so low, that it can’t cause you any problems from this perspective.</p><br>
+            <img class="icon" src="caffeine-icon.svg"><br>
+            <h5><b>Lower caffeine content</b></h5>
+            <p>Some people don’t have any reaction even with huge amounts of caffeine, but for others, even a sip over the daily coffee dose can lead to serious problems. Even without an apparent reaction, large amounts of caffeine can lead to serious conditions such as osteoporosis, anxiety, depression, sleep problems, and many other problems.</p>
+        </div>
+        <div>
+            <img class="productImg animate fadeInLeft" src="filter-comp.jpg">
+        </div>
+    </div>
+    <div class="grey-background" style="clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 20%);"></div>
+    <div id="flex-footer">
+        <img class="productImg" src="glass-comp.jpg">
+        <img class="productImg" src="sign-comp.jpg">
+        <img class="productImg" src="stir-comp.jpg">
+    </div>
 
-        <!-- info to go with icons: https://coffee-brewing-methods.com/cold-brew/health-benefits-of-cold-brew-coffee/ -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-    </body>
+    <!-- info to go with icons: https://coffee-brewing-methods.com/cold-brew/health-benefits-of-cold-brew-coffee/ -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>
