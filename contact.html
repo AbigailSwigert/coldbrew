@@ -25,6 +25,14 @@
                 border-radius: 10px;
                 font-family: 'Roboto Condensed', sans-serif;
             }
+            a, a:visited{
+                color: #17a2b8;
+                text-decoration: none;
+            }
+            a:hover {
+                color: #138496;
+                text-decoration: none;
+            }
             @media screen and (max-width: 800px){
                 #form {
                     width: 75vw;
@@ -44,12 +52,15 @@
                     margin: 10vh auto 0 auto;
                 }
             }
-            @media screen and (max-height: 580px) {
+            @media screen and (max-height: 650px) {
                 #grey {
                     display: none;
                 }
                 #form {
                     margin: 2vh auto 0 auto;
+                }
+                body {
+                    background-color: rgb(236, 236, 236);
                 }
             }
         </style>
@@ -72,9 +83,9 @@
                     <label for="message">Let us know what this is about:</label>
                     <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your message here..." required></textarea>
                 </div>
-                <button id="submit" type="submit" name="submit" class="btn">Submit</button> <!--add "btn-_____" for custom color (or change css)-->
-                </div>
+                <button id="submit" type="submit" name="submit" class="btn btn-info">Submit</button> <!--add "btn-_____" for custom color (or change css)-->
             </form>
+            <a href="index.html">Return to Homepage</a>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
