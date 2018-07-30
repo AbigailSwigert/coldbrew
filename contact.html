@@ -26,12 +26,22 @@
                 font-family: 'Roboto Condensed', sans-serif;
             }
             a, a:visited{
-                color: #17a2b8;
-                text-decoration: none;
+                color: #3f3531;
+                text-decoration: underline;
             }
             a:hover {
-                color: #138496;
-                text-decoration: none;
+                color: #181717;
+                text-decoration: underline;
+            }
+            .btn {
+                background-color: #3f3531;
+                color: white;
+            }
+            .btn:hover {
+                background-color:#181717;
+            }
+            h1 {
+                color: #3f3531;
             }
             @media screen and (max-width: 800px){
                 #form {
@@ -83,7 +93,7 @@
                     <label for="message">Let us know what this is about:</label>
                     <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your message here..." required></textarea>
                 </div>
-                <button id="submit" type="submit" name="submit" class="btn btn-info">Submit</button> <!--add "btn-_____" for custom color (or change css)-->
+                <button id="submit" type="submit" name="submit" class="btn">Submit</button> <!--add "btn-_____" for custom color (or change css)-->
             </form>
             <a href="index.html">Return to Homepage</a>
         </div>
